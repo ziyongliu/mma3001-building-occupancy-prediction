@@ -49,7 +49,7 @@
                     <h1 class="modulename">
 <a href="./../src.html">src</a><wbr>.preprocessing    </h1>
 
-                        <div class="docstring"><p>Module for preprocessing and temporal synchronization of building sensor telemetry.</p>
+                        <div class="docstring"><p>Module for cleaning and interpolating building sensor telemetry.</p>
 </div>
 
                         <input id="mod-preprocessing-view-source" class="view-source-toggle-state" type="checkbox" aria-hidden="true" tabindex="-1">
@@ -57,14 +57,14 @@
                         <label class="view-source-button" for="mod-preprocessing-view-source"><span>View Source</span></label>
 
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">"""</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd">Module for preprocessing and temporal synchronization of building sensor telemetry.</span>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="sd">Module for cleaning and interpolating building sensor telemetry.</span>
 </span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="sd">"""</span>
 </span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 </span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
 </span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="k">def</span><span class="w"> </span><span class="nf">clean_and_interpolate_sensor_grid</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'linear'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">    Interpolates missing telemetry across a regularized time series grid.</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">    Interpolates missing telemetry across a regular 5-minute time series grid.</span>
 </span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a><span class="sd">    Parameters:</span>
 </span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">        df (pd.DataFrame): Time-indexed DataFrame containing missing values (NaNs).</span>
@@ -93,7 +93,7 @@
     <a class="headerlink" href="#clean_and_interpolate_sensor_grid"></a>
             <div class="pdoc-code codehilite"><pre><span></span><span id="clean_and_interpolate_sensor_grid-8"><a href="#clean_and_interpolate_sensor_grid-8"><span class="linenos"> 8</span></a><span class="k">def</span><span class="w"> </span><span class="nf">clean_and_interpolate_sensor_grid</span><span class="p">(</span><span class="n">df</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">'linear'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 </span><span id="clean_and_interpolate_sensor_grid-9"><a href="#clean_and_interpolate_sensor_grid-9"><span class="linenos"> 9</span></a><span class="w">    </span><span class="sd">"""</span>
-</span><span id="clean_and_interpolate_sensor_grid-10"><a href="#clean_and_interpolate_sensor_grid-10"><span class="linenos">10</span></a><span class="sd">    Interpolates missing telemetry across a regularized time series grid.</span>
+</span><span id="clean_and_interpolate_sensor_grid-10"><a href="#clean_and_interpolate_sensor_grid-10"><span class="linenos">10</span></a><span class="sd">    Interpolates missing telemetry across a regular 5-minute time series grid.</span>
 </span><span id="clean_and_interpolate_sensor_grid-11"><a href="#clean_and_interpolate_sensor_grid-11"><span class="linenos">11</span></a>
 </span><span id="clean_and_interpolate_sensor_grid-12"><a href="#clean_and_interpolate_sensor_grid-12"><span class="linenos">12</span></a><span class="sd">    Parameters:</span>
 </span><span id="clean_and_interpolate_sensor_grid-13"><a href="#clean_and_interpolate_sensor_grid-13"><span class="linenos">13</span></a><span class="sd">        df (pd.DataFrame): Time-indexed DataFrame containing missing values (NaNs).</span>
@@ -108,7 +108,7 @@
 </span></pre></div>
 
 
-            <div class="docstring"><p>Interpolates missing telemetry across a regularized time series grid.</p>
+            <div class="docstring"><p>Interpolates missing telemetry across a regular 5-minute time series grid.</p>
 
 <p>Parameters:
     df (pd.DataFrame): Time-indexed DataFrame containing missing values (NaNs).
