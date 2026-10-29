@@ -15,9 +15,9 @@ def test_model_training_and_prediction():
         'Light Volatile Organic Compounds': [5, 20, 8, 25]
     })
     y = pd.Series([0, 1, 0, 1])
-    
+
     model = train_occupancy_model(X, y)
     preds = model.predict(X)
-    
+
     assert len(preds) == 4
     assert set(preds).issubset({0, 1})
