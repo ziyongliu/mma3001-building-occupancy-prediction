@@ -1,7 +1,7 @@
 # Building Occupancy Prediction via Indoor Environmental Telemetry
 
 **Unit:** MMA3001 – Numerical Methods and Machine Learning  
-**Student:** [Your Name]  
+**Student:** Evan Liu  
 **Dataset:** Dataset 2 – Monash Smart Infrastructure (Living Lab)
 
 ---
