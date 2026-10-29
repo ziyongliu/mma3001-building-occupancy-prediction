@@ -1,5 +1,5 @@
 """
-Module containing machine learning model definitions for occupancy prediction.
+Module containing machine learning model functions for occupancy prediction.
 """
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.pipeline import Pipeline
@@ -11,7 +11,7 @@ def train_occupancy_model(X_train: pd.DataFrame, y_train: pd.Series) -> Pipeline
 
     Parameters:
         X_train (pd.DataFrame): Training feature matrix.
-        y_train (pd.Series): Binary target vector (0 or 1).
+        y_train (pd.Series): Binary target vector (0 = Vacant, 1 = Occupied).
 
     Returns:
         Pipeline: Fitted Scikit-Learn Pipeline object.
